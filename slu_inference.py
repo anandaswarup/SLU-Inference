@@ -77,12 +77,13 @@ def main():
     # Validate paths
     validate_paths(args)
 
-    print("Loading SLU model...")
-
     # Create the SLU model using local paths
     try:
         # Convert to absolute path to avoid path concatenation issues
         slu_model_path = Path(args.slu_model_path).resolve()
+
+        # ASR model path
+        asr_model_path = str(args.asr_model_path)
 
         # Check if hyperparams.yaml exists
         hparams_file = slu_model_path / "hyperparams.yaml"
@@ -90,16 +91,14 @@ def main():
             print(f"Error: hyperparams.yaml not found at {hparams_file}")
             sys.exit(1)
 
-        print(f"Loading from: {slu_model_path}")
-
         slu_model = EndToEndSLU.from_hparams(
             source=str(slu_model_path),
             savedir=str(slu_model_path),
             run_opts={"device": "cuda" if torch.cuda.is_available() else "cpu"},
             # Use local ASR model
-            overrides={"asr_model_source": args.asr_model_path},
+            overrides={"asr_model_source": asr_model_path},
         )
-        print("SLU model loaded successfully")
+        print("SLU Seq2Seq model (+ CRDNN ASR encoder) loaded successfully")
     except Exception as e:
         print(f"Error loading SLU model: {e}")
         traceback.print_exc()
