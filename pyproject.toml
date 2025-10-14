@@ -10,3 +10,8 @@ dependencies = [
     "speechbrain>=1.0.3",
     "torch>=2.8.0",
 ]
+
+[dependency-groups]
+dev = [
+    "ruff>=0.14.0",
+]
