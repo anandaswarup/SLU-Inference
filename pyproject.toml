@@ -6,8 +6,10 @@ readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
     "argparse>=1.4.0",
+    "datasets>=4.2.0",
     "ipython>=9.6.0",
     "path>=17.1.1",
+    "soundfile>=0.13.1",
     "speechbrain>=1.0.3",
     "torch>=2.8.0",
 ]
