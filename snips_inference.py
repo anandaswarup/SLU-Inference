@@ -1,8 +1,8 @@
 """
 SNIPS Dataset Batch Inference Script
 
-This script performs SLU inference on the SNIPS dataset train split and saves
-the results to a CSV file with parsed action, object, and location components.
+This script performs SLU inference on the SNIPS dataset and saves the results to a CSV file with parsed
+action, object, and location components.
 
 Output CSV contains: filepath, transcription, action, object, location, raw_slu_output
 """
