@@ -12,6 +12,10 @@ This project provides command-line tools for performing Spoken Language Understa
 - Batch processing of Fluent Speech Commands test dataset
 - Output: filepath, transcription, action, object, location, raw_slu_output
 
+### 3. SNIPS Dataset (`snips_inference.py`)
+- Batch processing of SNIPS dataset
+- Output: filepath, transcription, action, object, location, raw_slu_output
+
 ## Features
 
 - Load pre-trained SLU and ASR models from local disk
@@ -20,14 +24,6 @@ This project provides command-line tools for performing Spoken Language Understa
 - Robust parsing of different SLU output formats (JSON, malformed JSON, simple text)
 - Robust error handling and multiple inference methods
 
-
-## Dependencies
-
-- `torch>=1.10.0`
-- `torchaudio>=0.10.0`
-- `speechbrain>=0.5.0`
-- `transformers`
-- `sentencepiece`
 
 ## Usage
 
